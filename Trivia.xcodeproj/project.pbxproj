@@ -27,6 +27,7 @@
 		A066A6591ADC282500D5150C /* ParticipantInitialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A6581ADC282500D5150C /* ParticipantInitialVC.m */; };
 		A066A65C1ADC28B300D5150C /* HostOrParticipantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */; };
 		A066A65E1ADC2D4300D5150C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A066A65D1ADC2D4300D5150C /* Podfile */; };
+		A0EC76D91ADC72D800EDF70A /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EC76D81ADC72D800EDF70A /* cell.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		A066A65A1ADC28B300D5150C /* HostOrParticipantVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostOrParticipantVC.h; sourceTree = "<group>"; };
 		A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostOrParticipantVC.m; sourceTree = "<group>"; };
 		A066A65D1ADC2D4300D5150C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0EC76D81ADC72D800EDF70A /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
 		DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A05A47251ADA1A7200FB0D8B /* Supporting Files */,
+				A0EC76D81ADC72D800EDF70A /* cell.png */,
 				A05A47291ADA1A7200FB0D8B /* AppDelegate.h */,
 				A05A472A1ADA1A7200FB0D8B /* AppDelegate.m */,
 				A066A65A1ADC28B300D5150C /* HostOrParticipantVC.h */,
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05A47341ADA1A7200FB0D8B /* Main.storyboard in Resources */,
+				A0EC76D91ADC72D800EDF70A /* cell.png in Resources */,
 				A05A47391ADA1A7200FB0D8B /* LaunchScreen.xib in Resources */,
 				A066A65E1ADC2D4300D5150C /* Podfile in Resources */,
 				A05A47361ADA1A7200FB0D8B /* Images.xcassets in Resources */,

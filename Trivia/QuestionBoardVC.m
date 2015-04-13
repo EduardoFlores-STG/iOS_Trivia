@@ -13,15 +13,24 @@
 #import "Macros.h"
 #import "Question.h"
 
+#define BOARD_NUMBER_OF_ROWS        6
+#define BOARD_NUMBER_OF_COLUMNS     6
+
 @interface QuestionBoardVC ()
 {
+    int numberOfCategoriesDownloaded;
+    NSMutableArray *arrayCategory_0;
     NSMutableArray *arrayCategory_1;
     NSMutableArray *arrayCategory_2;
     NSMutableArray *arrayCategory_3;
     NSMutableArray *arrayCategory_4;
     NSMutableArray *arrayCategory_5;
     NSArray *arrayOfCategories;
+    UIButton *buttons[BOARD_NUMBER_OF_COLUMNS][BOARD_NUMBER_OF_ROWS];
+
 }
+@property (nonatomic, weak) MBProgressHUD *hud;
+
 @end
 
 @implementation QuestionBoardVC
@@ -31,12 +40,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.mode = MBProgressHUDModeIndeterminate;
+    self.hud.labelText = @"Downloading questions...";
+    
+    arrayCategory_0 = [[NSMutableArray alloc]init];
     arrayCategory_1 = [[NSMutableArray alloc]init];
     arrayCategory_2 = [[NSMutableArray alloc]init];
     arrayCategory_3 = [[NSMutableArray alloc]init];
     arrayCategory_4 = [[NSMutableArray alloc]init];
     arrayCategory_5 = [[NSMutableArray alloc]init];
     
+    self.navigationController.navigationBarHidden = YES;
     [self downloadCategories];
 }
 
@@ -49,15 +64,20 @@
 - (void) downloadCategories
 {
     // download 5 categories at random
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 6; i++)
     {
-        int random_category_id = rand() % (TRIVIA_CATEGORY_TOTAL_NUMBER - 1) + 1;
+        int random_category_id = arc4random() % (TRIVIA_CATEGORY_TOTAL_NUMBER - 1) + 1;
 
         [TriviaAPI getTriviaCategoryWithCategoryId:random_category_id completionBlock:^(id result, NSError *error)
          {
              [self parseCategories:(NSDictionary *)result categoryNumber:i];
-             if (i == 4)
-                 [self showQuestions];
+             numberOfCategoriesDownloaded++;
+             if (numberOfCategoriesDownloaded == 6)
+             {
+                 [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                     [self showQuestions];
+                 }];
+             }
          }];
     }
 }
@@ -80,18 +100,21 @@
         switch (categoryNumber)
         {
             case 0:
-                [arrayCategory_1 addObject:question];
+                [arrayCategory_0 addObject:question];
                 break;
             case 1:
-                [arrayCategory_2 addObject:question];
+                [arrayCategory_1 addObject:question];
                 break;
             case 2:
-                [arrayCategory_3 addObject:question];
+                [arrayCategory_2 addObject:question];
                 break;
             case 3:
-                [arrayCategory_4 addObject:question];
+                [arrayCategory_3 addObject:question];
                 break;
             case 4:
+                [arrayCategory_4 addObject:question];
+                break;
+            case 5:
                 [arrayCategory_5 addObject:question];
                 break;
             default:
@@ -102,11 +125,58 @@
 
 - (void) showQuestions
 {
-    arrayOfCategories = [[NSArray alloc]initWithObjects:arrayCategory_1,
+    arrayOfCategories = [[NSArray alloc]initWithObjects:arrayCategory_0,
+                                                        arrayCategory_1,
                                                         arrayCategory_2,
                                                         arrayCategory_3,
                                                         arrayCategory_4,
                                                         arrayCategory_5, nil];
+    
+    [self.hud hide:YES];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    [self createButtons];
+
+}
+
+- (void) createButtons
+{
+    NSInteger intXTile;
+    NSInteger intYTile;
+    
+    float tileWidth = self.view.bounds.size.width / BOARD_NUMBER_OF_COLUMNS;
+    float tileHeight = self.view.bounds.size.height / BOARD_NUMBER_OF_ROWS;
+    
+    for (int x = 0; x < BOARD_NUMBER_OF_COLUMNS; x++)
+    {
+        for (int y = 0; y < BOARD_NUMBER_OF_ROWS; y++)
+        {
+            intXTile  = x * tileWidth;
+            intYTile = y * tileHeight;
+            
+            // create a value button, text, or image
+            buttons[x][y] = [[UIButton alloc] initWithFrame:CGRectMake(intXTile, intYTile, tileWidth, tileHeight)];
+            [buttons[x][y] setBackgroundImage:[UIImage imageNamed:@"cell"] forState:UIControlStateNormal];
+            [buttons[x][y] addTarget:self action:@selector(askQuestion:) forControlEvents:UIControlEventTouchDown];
+            [buttons[x][y] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            buttons[x][y].adjustsImageWhenHighlighted = NO;
+            buttons[x][y].adjustsImageWhenDisabled = NO;
+            buttons[x][y].titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            buttons[x][y].titleLabel.textAlignment = NSTextAlignmentCenter;
+            [buttons[x][y] setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 5.0, 0.0, 5.0)];
+            if (y == 0)
+            {
+                Question *question = [[arrayOfCategories objectAtIndex:x]objectAtIndex:0];
+                [buttons[x][y] setTitle:[question question_category_title] forState:UIControlStateNormal];
+            }
+            
+            [self.view addSubview:buttons[x][y]];
+        }
+    }
+}
+
+- (IBAction)askQuestion:(id)sender
+{
+    NSLog(@"askQuestion sender = %@", [sender class]);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

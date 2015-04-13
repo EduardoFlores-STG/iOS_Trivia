@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="1338" y="-732"/>
         </scene>
-        <!--Question BoardVC-->
+        <!--Trivia!-->
         <scene sceneID="vvQ-SB-A2r">
             <objects>
                 <viewController id="xV0-sb-vEE" customClass="QuestionBoardVC" sceneMemberID="viewController">
@@ -136,28 +136,9 @@
                     <view key="view" contentMode="scaleToFill" id="XcY-Kb-I2p">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VC-6q-YQ8">
-                                <rect key="frame" x="16" y="202" width="181" height="30"/>
-                                <state key="normal" title="Enable participant buttons">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="button_enableParticipantButtons:" destination="xV0-sb-vEE" eventType="touchUpInside" id="xiX-Ei-dqy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-Zf-XWS">
-                                <rect key="frame" x="16" y="276" width="212" height="30"/>
-                                <state key="normal" title="Disable all participants buttons">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="button_disableAllParticipantsButtons:" destination="xV0-sb-vEE" eventType="touchUpInside" id="X6O-dz-BPt"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Trivia!" id="UHF-Co-vvJ"/>
                     <connections>
                         <segue destination="aaZ-4b-CmH" kind="show" identifier="segueSingleQuestion" id="xb5-Xs-bdb"/>
                     </connections>
