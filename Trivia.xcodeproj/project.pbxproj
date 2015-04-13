@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47ABA9E814B070F51F0313F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D48E2D80A6599C3A66CEA7C /* libPods.a */; };
+		A05A47281ADA1A7200FB0D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A47271ADA1A7200FB0D8B /* main.m */; };
+		A05A472B1ADA1A7200FB0D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A472A1ADA1A7200FB0D8B /* AppDelegate.m */; };
+		A05A472E1ADA1A7200FB0D8B /* Trivia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A05A472C1ADA1A7200FB0D8B /* Trivia.xcdatamodeld */; };
+		A05A47341ADA1A7200FB0D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05A47321ADA1A7200FB0D8B /* Main.storyboard */; };
+		A05A47361ADA1A7200FB0D8B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05A47351ADA1A7200FB0D8B /* Images.xcassets */; };
+		A05A47391ADA1A7200FB0D8B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05A47371ADA1A7200FB0D8B /* LaunchScreen.xib */; };
+		A05A47451ADA1A7200FB0D8B /* TriviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A47441ADA1A7200FB0D8B /* TriviaTests.m */; };
+		A05B19B91ADC41C3005558E3 /* Participant.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19B81ADC41C3005558E3 /* Participant.m */; };
+		A05B19BD1ADC433C005558E3 /* ParticipantGameActionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */; };
+		A05B19C01ADC4490005558E3 /* QuestionBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */; };
+		A066A64B1ADC1F8400D5150C /* TriviaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A64A1ADC1F8400D5150C /* TriviaAPI.m */; };
+		A066A64D1ADC235B00D5150C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A066A64C1ADC235B00D5150C /* MultipeerConnectivity.framework */; };
+		A066A6511ADC250900D5150C /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A6501ADC250900D5150C /* MCManager.m */; };
+		A066A6561ADC281600D5150C /* HostInitialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A6551ADC281600D5150C /* HostInitialVC.m */; };
+		A066A6591ADC282500D5150C /* ParticipantInitialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A6581ADC282500D5150C /* ParticipantInitialVC.m */; };
+		A066A65C1ADC28B300D5150C /* HostOrParticipantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */; };
+		A066A65E1ADC2D4300D5150C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A066A65D1ADC2D4300D5150C /* Podfile */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A05A473F1ADA1A7200FB0D8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05A471A1ADA1A7200FB0D8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A05A47211ADA1A7200FB0D8B;
+			remoteInfo = Trivia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		335D79E908A4C39E003BCA3C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8D48E2D80A6599C3A66CEA7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01EAF151ADA235C00FCEFB3 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		A05A47221ADA1A7200FB0D8B /* Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05A47261ADA1A7200FB0D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05A47271ADA1A7200FB0D8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A05A47291ADA1A7200FB0D8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A05A472A1ADA1A7200FB0D8B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A05A472D1ADA1A7200FB0D8B /* Trivia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trivia.xcdatamodel; sourceTree = "<group>"; };
+		A05A47331ADA1A7200FB0D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A05A47351ADA1A7200FB0D8B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A05A47381ADA1A7200FB0D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A05A473E1ADA1A7200FB0D8B /* TriviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05A47431ADA1A7200FB0D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05A47441ADA1A7200FB0D8B /* TriviaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriviaTests.m; sourceTree = "<group>"; };
+		A05B19B71ADC41C3005558E3 /* Participant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Participant.h; sourceTree = "<group>"; };
+		A05B19B81ADC41C3005558E3 /* Participant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Participant.m; sourceTree = "<group>"; };
+		A05B19BB1ADC433C005558E3 /* ParticipantGameActionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantGameActionsVC.h; sourceTree = "<group>"; };
+		A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantGameActionsVC.m; sourceTree = "<group>"; };
+		A05B19BE1ADC4490005558E3 /* QuestionBoardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBoardVC.h; sourceTree = "<group>"; };
+		A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBoardVC.m; sourceTree = "<group>"; };
+		A066A6491ADC1F8400D5150C /* TriviaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriviaAPI.h; sourceTree = "<group>"; };
+		A066A64A1ADC1F8400D5150C /* TriviaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriviaAPI.m; sourceTree = "<group>"; };
+		A066A64C1ADC235B00D5150C /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		A066A64F1ADC250900D5150C /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
+		A066A6501ADC250900D5150C /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
+		A066A6541ADC281600D5150C /* HostInitialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostInitialVC.h; sourceTree = "<group>"; };
+		A066A6551ADC281600D5150C /* HostInitialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostInitialVC.m; sourceTree = "<group>"; };
+		A066A6571ADC282500D5150C /* ParticipantInitialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantInitialVC.h; sourceTree = "<group>"; };
+		A066A6581ADC282500D5150C /* ParticipantInitialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantInitialVC.m; sourceTree = "<group>"; };
+		A066A65A1ADC28B300D5150C /* HostOrParticipantVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostOrParticipantVC.h; sourceTree = "<group>"; };
+		A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostOrParticipantVC.m; sourceTree = "<group>"; };
+		A066A65D1ADC2D4300D5150C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A05A471F1ADA1A7200FB0D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A066A64D1ADC235B00D5150C /* MultipeerConnectivity.framework in Frameworks */,
+				47ABA9E814B070F51F0313F6 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A05A473B1ADA1A7200FB0D8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B38D87907E49F708C8EA981 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A066A64C1ADC235B00D5150C /* MultipeerConnectivity.framework */,
+				8D48E2D80A6599C3A66CEA7C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FEA6F37E749454F42E87214 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */,
+				335D79E908A4C39E003BCA3C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A05A47191ADA1A7200FB0D8B = {
+			isa = PBXGroup;
+			children = (
+				A066A65D1ADC2D4300D5150C /* Podfile */,
+				A05A47241ADA1A7200FB0D8B /* Trivia */,
+				A05A47411ADA1A7200FB0D8B /* TriviaTests */,
+				A05A47231ADA1A7200FB0D8B /* Products */,
+				7FEA6F37E749454F42E87214 /* Pods */,
+				4B38D87907E49F708C8EA981 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A05A47231ADA1A7200FB0D8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A05A47221ADA1A7200FB0D8B /* Trivia.app */,
+				A05A473E1ADA1A7200FB0D8B /* TriviaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A05A47241ADA1A7200FB0D8B /* Trivia */ = {
+			isa = PBXGroup;
+			children = (
+				A05A47251ADA1A7200FB0D8B /* Supporting Files */,
+				A05A47291ADA1A7200FB0D8B /* AppDelegate.h */,
+				A05A472A1ADA1A7200FB0D8B /* AppDelegate.m */,
+				A066A65A1ADC28B300D5150C /* HostOrParticipantVC.h */,
+				A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */,
+				A066A64E1ADC24D400D5150C /* Helpers and Macros */,
+				A05A47321ADA1A7200FB0D8B /* Main.storyboard */,
+				A05A47351ADA1A7200FB0D8B /* Images.xcassets */,
+				A066A6521ADC27E000D5150C /* Host */,
+				A066A6531ADC27E800D5150C /* Participant */,
+			);
+			path = Trivia;
+			sourceTree = "<group>";
+		};
+		A05A47251ADA1A7200FB0D8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A05A47371ADA1A7200FB0D8B /* LaunchScreen.xib */,
+				A05A472C1ADA1A7200FB0D8B /* Trivia.xcdatamodeld */,
+				A05A47261ADA1A7200FB0D8B /* Info.plist */,
+				A05A47271ADA1A7200FB0D8B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A05A47411ADA1A7200FB0D8B /* TriviaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A05A47441ADA1A7200FB0D8B /* TriviaTests.m */,
+				A05A47421ADA1A7200FB0D8B /* Supporting Files */,
+			);
+			path = TriviaTests;
+			sourceTree = "<group>";
+		};
+		A05A47421ADA1A7200FB0D8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A05A47431ADA1A7200FB0D8B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A066A64E1ADC24D400D5150C /* Helpers and Macros */ = {
+			isa = PBXGroup;
+			children = (
+				A01EAF151ADA235C00FCEFB3 /* Macros.h */,
+				A066A6491ADC1F8400D5150C /* TriviaAPI.h */,
+				A066A64A1ADC1F8400D5150C /* TriviaAPI.m */,
+				A066A64F1ADC250900D5150C /* MCManager.h */,
+				A066A6501ADC250900D5150C /* MCManager.m */,
+			);
+			name = "Helpers and Macros";
+			sourceTree = "<group>";
+		};
+		A066A6521ADC27E000D5150C /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				A066A6541ADC281600D5150C /* HostInitialVC.h */,
+				A066A6551ADC281600D5150C /* HostInitialVC.m */,
+				A05B19BE1ADC4490005558E3 /* QuestionBoardVC.h */,
+				A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */,
+			);
+			name = Host;
+			sourceTree = "<group>";
+		};
+		A066A6531ADC27E800D5150C /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				A05B19B71ADC41C3005558E3 /* Participant.h */,
+				A05B19B81ADC41C3005558E3 /* Participant.m */,
+				A066A6571ADC282500D5150C /* ParticipantInitialVC.h */,
+				A066A6581ADC282500D5150C /* ParticipantInitialVC.m */,
+				A05B19BB1ADC433C005558E3 /* ParticipantGameActionsVC.h */,
+				A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */,
+			);
+			name = Participant;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A05A47211ADA1A7200FB0D8B /* Trivia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A05A47481ADA1A7200FB0D8B /* Build configuration list for PBXNativeTarget "Trivia" */;
+			buildPhases = (
+				BA89B8FD65612979313D213F /* Check Pods Manifest.lock */,
+				A05A471E1ADA1A7200FB0D8B /* Sources */,
+				A05A471F1ADA1A7200FB0D8B /* Frameworks */,
+				A05A47201ADA1A7200FB0D8B /* Resources */,
+				7F79F22010FD8CB2E90D8110 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trivia;
+			productName = Trivia;
+			productReference = A05A47221ADA1A7200FB0D8B /* Trivia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A05A473D1ADA1A7200FB0D8B /* TriviaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A05A474B1ADA1A7200FB0D8B /* Build configuration list for PBXNativeTarget "TriviaTests" */;
+			buildPhases = (
+				A05A473A1ADA1A7200FB0D8B /* Sources */,
+				A05A473B1ADA1A7200FB0D8B /* Frameworks */,
+				A05A473C1ADA1A7200FB0D8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A05A47401ADA1A7200FB0D8B /* PBXTargetDependency */,
+			);
+			name = TriviaTests;
+			productName = TriviaTests;
+			productReference = A05A473E1ADA1A7200FB0D8B /* TriviaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A05A471A1ADA1A7200FB0D8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Eduardo Flores";
+				TargetAttributes = {
+					A05A47211ADA1A7200FB0D8B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A05A473D1ADA1A7200FB0D8B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A05A47211ADA1A7200FB0D8B;
+					};
+				};
+			};
+			buildConfigurationList = A05A471D1ADA1A7200FB0D8B /* Build configuration list for PBXProject "Trivia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A05A47191ADA1A7200FB0D8B;
+			productRefGroup = A05A47231ADA1A7200FB0D8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A05A47211ADA1A7200FB0D8B /* Trivia */,
+				A05A473D1ADA1A7200FB0D8B /* TriviaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A05A47201ADA1A7200FB0D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05A47341ADA1A7200FB0D8B /* Main.storyboard in Resources */,
+				A05A47391ADA1A7200FB0D8B /* LaunchScreen.xib in Resources */,
+				A066A65E1ADC2D4300D5150C /* Podfile in Resources */,
+				A05A47361ADA1A7200FB0D8B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A05A473C1ADA1A7200FB0D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F79F22010FD8CB2E90D8110 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA89B8FD65612979313D213F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A05A471E1ADA1A7200FB0D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A066A6591ADC282500D5150C /* ParticipantInitialVC.m in Sources */,
+				A05B19C01ADC4490005558E3 /* QuestionBoardVC.m in Sources */,
+				A066A6511ADC250900D5150C /* MCManager.m in Sources */,
+				A05A472B1ADA1A7200FB0D8B /* AppDelegate.m in Sources */,
+				A05B19B91ADC41C3005558E3 /* Participant.m in Sources */,
+				A066A64B1ADC1F8400D5150C /* TriviaAPI.m in Sources */,
+				A066A6561ADC281600D5150C /* HostInitialVC.m in Sources */,
+				A05A47281ADA1A7200FB0D8B /* main.m in Sources */,
+				A05A472E1ADA1A7200FB0D8B /* Trivia.xcdatamodeld in Sources */,
+				A05B19BD1ADC433C005558E3 /* ParticipantGameActionsVC.m in Sources */,
+				A066A65C1ADC28B300D5150C /* HostOrParticipantVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A05A473A1ADA1A7200FB0D8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05A47451ADA1A7200FB0D8B /* TriviaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A05A47401ADA1A7200FB0D8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A05A47211ADA1A7200FB0D8B /* Trivia */;
+			targetProxy = A05A473F1ADA1A7200FB0D8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A05A47321ADA1A7200FB0D8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A05A47331ADA1A7200FB0D8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A05A47371ADA1A7200FB0D8B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A05A47381ADA1A7200FB0D8B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A05A47461ADA1A7200FB0D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A05A47471ADA1A7200FB0D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A05A47491ADA1A7200FB0D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trivia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A05A474A1ADA1A7200FB0D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 335D79E908A4C39E003BCA3C /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trivia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A05A474C1ADA1A7200FB0D8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TriviaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivia.app/Trivia";
+			};
+			name = Debug;
+		};
+		A05A474D1ADA1A7200FB0D8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TriviaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivia.app/Trivia";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A05A471D1ADA1A7200FB0D8B /* Build configuration list for PBXProject "Trivia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A05A47461ADA1A7200FB0D8B /* Debug */,
+				A05A47471ADA1A7200FB0D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A05A47481ADA1A7200FB0D8B /* Build configuration list for PBXNativeTarget "Trivia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A05A47491ADA1A7200FB0D8B /* Debug */,
+				A05A474A1ADA1A7200FB0D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A05A474B1ADA1A7200FB0D8B /* Build configuration list for PBXNativeTarget "TriviaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A05A474C1ADA1A7200FB0D8B /* Debug */,
+				A05A474D1ADA1A7200FB0D8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A05A472C1ADA1A7200FB0D8B /* Trivia.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A05A472D1ADA1A7200FB0D8B /* Trivia.xcdatamodel */,
+			);
+			currentVersion = A05A472D1ADA1A7200FB0D8B /* Trivia.xcdatamodel */;
+			path = Trivia.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A05A471A1ADA1A7200FB0D8B /* Project object */;
+}

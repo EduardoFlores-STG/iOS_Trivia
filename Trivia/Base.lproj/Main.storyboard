@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FWS-c3-W4s">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Host or Participant-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HostOrParticipantVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTk-1k-LUA">
+                                <rect key="frame" x="199" y="197" width="202" height="30"/>
+                                <state key="normal" title="Game Host (Query questions)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_gameHost:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PN3-Sc-TrU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to be the game host or a participant?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zmh-C2-I9G">
+                                <rect key="frame" x="16" y="104" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(NEEDS MASSIVE UI IMPROVEMENTS)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-Rs-X0Z">
+                                <rect key="frame" x="148" y="386" width="305" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-Hz-RXm">
+                                <rect key="frame" x="165.5" y="285" width="270" height="30"/>
+                                <state key="normal" title="Participant (connects to the game host)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_gameParticipant:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFD-dX-h9y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="HTk-1k-LUA" secondAttribute="centerX" id="CZi-kx-DJF"/>
+                            <constraint firstItem="ehc-Hz-RXm" firstAttribute="top" secondItem="HTk-1k-LUA" secondAttribute="bottom" constant="58" id="IGJ-dg-P3D"/>
+                            <constraint firstAttribute="centerX" secondItem="zOX-Rs-X0Z" secondAttribute="centerX" constant="-0.5" id="XeE-3e-Lez"/>
+                            <constraint firstItem="HTk-1k-LUA" firstAttribute="top" secondItem="zmh-C2-I9G" secondAttribute="bottom" constant="72.5" id="Zho-x4-KYi"/>
+                            <constraint firstItem="zOX-Rs-X0Z" firstAttribute="top" secondItem="ehc-Hz-RXm" secondAttribute="bottom" constant="71" id="gJc-Oi-bwz"/>
+                            <constraint firstItem="zmh-C2-I9G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="je7-ei-7c9"/>
+                            <constraint firstAttribute="centerX" secondItem="ehc-Hz-RXm" secondAttribute="centerX" constant="-0.5" id="ldr-hO-brR"/>
+                            <constraint firstAttribute="centerX" secondItem="zmh-C2-I9G" secondAttribute="centerX" id="qzg-JT-zup"/>
+                            <constraint firstItem="zmh-C2-I9G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uhg-5Y-y14"/>
+                            <constraint firstItem="zmh-C2-I9G" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uv6-Co-dUr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Host or Participant" id="kKc-8d-WfW"/>
+                    <connections>
+                        <segue destination="x7i-vn-x8T" kind="show" identifier="segueToGameParticipant" id="dax-DH-l2S"/>
+                        <segue destination="MHC-FZ-GEN" kind="show" identifier="segueToGameHost" id="YO3-Vz-6Hn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="-372"/>
+        </scene>
+        <!--Game Host-->
+        <scene sceneID="H2Q-bF-5WV">
+            <objects>
+                <viewController id="MHC-FZ-GEN" customClass="HostInitialVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6vG-nz-Jnr"/>
+                        <viewControllerLayoutGuide type="bottom" id="f1h-lV-3oG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ujB-Sl-8GT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Jn7-22-ge1">
+                                <rect key="frame" x="16" y="92" width="568" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lNJ-ek-HPH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rd-b2-dvY">
+                                <rect key="frame" x="197" y="160" width="206" height="30"/>
+                                <state key="normal" title="I'm ready to be the game host">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_startHost:" destination="MHC-FZ-GEN" eventType="touchUpInside" id="Fny-ww-zqo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Rd-b2-dvY" firstAttribute="top" secondItem="Jn7-22-ge1" secondAttribute="bottom" constant="8" id="8ZG-oM-Slh"/>
+                            <constraint firstItem="Jn7-22-ge1" firstAttribute="top" secondItem="6vG-nz-Jnr" secondAttribute="bottom" constant="28" id="BkO-90-Wtv"/>
+                            <constraint firstItem="Jn7-22-ge1" firstAttribute="trailing" secondItem="ujB-Sl-8GT" secondAttribute="trailingMargin" id="Szs-0t-LQr"/>
+                            <constraint firstItem="Jn7-22-ge1" firstAttribute="leading" secondItem="ujB-Sl-8GT" secondAttribute="leadingMargin" id="iki-6I-dL3"/>
+                            <constraint firstAttribute="centerX" secondItem="4Rd-b2-dvY" secondAttribute="centerX" id="kLW-Le-3XG"/>
+                            <constraint firstAttribute="centerX" secondItem="Jn7-22-ge1" secondAttribute="centerX" id="ybb-VM-KcV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game Host" id="Yju-J1-1VV"/>
+                    <connections>
+                        <outlet property="label_hostInstructions" destination="Jn7-22-ge1" id="alu-RY-yP0"/>
+                        <segue destination="xV0-sb-vEE" kind="show" identifier="segueQuestionBoard" id="D9Z-VO-2cU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uah-Eb-IaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="-732"/>
+        </scene>
+        <!--Question BoardVC-->
+        <scene sceneID="vvQ-SB-A2r">
+            <objects>
+                <viewController id="xV0-sb-vEE" customClass="QuestionBoardVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="08d-bY-3pY"/>
+                        <viewControllerLayoutGuide type="bottom" id="GCt-9x-ZN0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XcY-Kb-I2p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-LA-1ca">
+                                <rect key="frame" x="16" y="72" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VC-6q-YQ8">
+                                <rect key="frame" x="16" y="202" width="181" height="30"/>
+                                <state key="normal" title="Enable participant buttons">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_enableParticipantButtons:" destination="xV0-sb-vEE" eventType="touchUpInside" id="xiX-Ei-dqy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-Zf-XWS">
+                                <rect key="frame" x="16" y="276" width="212" height="30"/>
+                                <state key="normal" title="Disable all participants buttons">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_disableAllParticipantsButtons:" destination="xV0-sb-vEE" eventType="touchUpInside" id="X6O-dz-BPt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="label_test" destination="fbn-LA-1ca" id="vtH-AO-dbp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKi-Ys-iTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-732"/>
+        </scene>
+        <!--Participant-->
+        <scene sceneID="bAZ-j0-gVD">
+            <objects>
+                <viewController id="x7i-vn-x8T" customClass="ParticipantInitialVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lm3-Le-vWQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="lIx-h3-1Xc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Az-jZ-lMw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your name?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-2J-ybu">
+                                <rect key="frame" x="16" y="121" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xe-bx-QLc">
+                                <rect key="frame" x="16" y="150" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdp-Mx-lyC">
+                                <rect key="frame" x="269" y="188" width="62" height="30"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_startParticipant:" destination="x7i-vn-x8T" eventType="touchUpInside" id="5kz-5C-Od8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3q0-2J-ybu" firstAttribute="trailing" secondItem="9Az-jZ-lMw" secondAttribute="trailingMargin" id="Ez7-Ea-4dJ"/>
+                            <constraint firstAttribute="centerX" secondItem="3q0-2J-ybu" secondAttribute="centerX" id="Fl5-gv-Cqe"/>
+                            <constraint firstItem="0xe-bx-QLc" firstAttribute="leading" secondItem="9Az-jZ-lMw" secondAttribute="leadingMargin" id="Lho-ss-S1o"/>
+                            <constraint firstItem="0xe-bx-QLc" firstAttribute="trailing" secondItem="9Az-jZ-lMw" secondAttribute="trailingMargin" id="Mh0-7q-Aer"/>
+                            <constraint firstItem="3q0-2J-ybu" firstAttribute="leading" secondItem="9Az-jZ-lMw" secondAttribute="leadingMargin" id="VQQ-8c-84D"/>
+                            <constraint firstAttribute="centerX" secondItem="0xe-bx-QLc" secondAttribute="centerX" id="Xzk-kd-Vxc"/>
+                            <constraint firstItem="0xe-bx-QLc" firstAttribute="top" secondItem="3q0-2J-ybu" secondAttribute="bottom" constant="8" id="YhN-np-L13"/>
+                            <constraint firstItem="3q0-2J-ybu" firstAttribute="top" secondItem="lm3-Le-vWQ" secondAttribute="bottom" constant="57" id="rB2-at-dOI"/>
+                            <constraint firstAttribute="centerX" secondItem="rdp-Mx-lyC" secondAttribute="centerX" id="tbY-98-yQz"/>
+                            <constraint firstItem="rdp-Mx-lyC" firstAttribute="top" secondItem="0xe-bx-QLc" secondAttribute="bottom" constant="8" id="wxu-ne-0E5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Participant" id="hZO-EZ-lM6"/>
+                    <connections>
+                        <outlet property="textfield_participantName" destination="0xe-bx-QLc" id="MfP-XJ-sT1"/>
+                        <segue destination="1di-bd-msh" kind="show" identifier="segueParticipantGameAction" id="cs1-c5-BFc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAk-KZ-dTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="-13"/>
+        </scene>
+        <!--Participant Game ActionsVC-->
+        <scene sceneID="wJJ-gU-FNB">
+            <objects>
+                <viewController id="1di-bd-msh" customClass="ParticipantGameActionsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YTw-qq-cPt"/>
+                        <viewControllerLayoutGuide type="bottom" id="pBm-0m-cFu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SRH-FM-Mq3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FC-vy-4wI">
+                                <rect key="frame" x="16" y="292" width="568" height="300"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="button_participant:" destination="1di-bd-msh" eventType="touchUpInside" id="vKw-Df-bh6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="e7L-VB-Y3j">
+                                <rect key="frame" x="384" y="224" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="A5w-S5-3bF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-bO-bgg">
+                                <rect key="frame" x="17" y="72" width="567" height="30"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="LN7-KE-6ll">
+                                <rect key="frame" x="17" y="224" width="359" height="60"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LN7-KE-6ll" firstAttribute="leading" secondItem="SRH-FM-Mq3" secondAttribute="leadingMargin" constant="1" id="340-gp-oIB"/>
+                            <constraint firstItem="pBm-0m-cFu" firstAttribute="top" secondItem="1FC-vy-4wI" secondAttribute="bottom" constant="8" id="5iF-iG-XNd"/>
+                            <constraint firstItem="e7L-VB-Y3j" firstAttribute="leading" secondItem="LN7-KE-6ll" secondAttribute="trailing" constant="8" symbolic="YES" id="61I-ES-1yR"/>
+                            <constraint firstAttribute="centerX" secondItem="1FC-vy-4wI" secondAttribute="centerX" id="L40-7g-LaK"/>
+                            <constraint firstItem="VfC-bO-bgg" firstAttribute="top" secondItem="YTw-qq-cPt" secondAttribute="bottom" constant="8" id="Nkn-aN-yxn"/>
+                            <constraint firstItem="e7L-VB-Y3j" firstAttribute="baseline" secondItem="LN7-KE-6ll" secondAttribute="firstBaseline" id="S70-xR-wnm"/>
+                            <constraint firstItem="1FC-vy-4wI" firstAttribute="top" secondItem="e7L-VB-Y3j" secondAttribute="bottom" constant="8" symbolic="YES" id="Yyy-H0-GMS"/>
+                            <constraint firstItem="1FC-vy-4wI" firstAttribute="leading" secondItem="SRH-FM-Mq3" secondAttribute="leadingMargin" id="a1a-MR-a4S"/>
+                            <constraint firstItem="VfC-bO-bgg" firstAttribute="leading" secondItem="SRH-FM-Mq3" secondAttribute="leadingMargin" constant="1" id="e4c-3f-fDm"/>
+                            <constraint firstItem="e7L-VB-Y3j" firstAttribute="top" secondItem="SRH-FM-Mq3" secondAttribute="top" constant="224" id="fws-k0-u22"/>
+                            <constraint firstItem="1FC-vy-4wI" firstAttribute="top" secondItem="LN7-KE-6ll" secondAttribute="bottom" constant="8" id="g0e-PZ-ufv"/>
+                            <constraint firstItem="e7L-VB-Y3j" firstAttribute="top" secondItem="LN7-KE-6ll" secondAttribute="top" id="pdW-dR-NBx"/>
+                            <constraint firstAttribute="centerX" secondItem="VfC-bO-bgg" secondAttribute="centerX" constant="-0.5" id="rxh-aW-KQI"/>
+                            <constraint firstItem="e7L-VB-Y3j" firstAttribute="trailing" secondItem="VfC-bO-bgg" secondAttribute="trailing" id="sjM-Wi-b9T"/>
+                            <constraint firstItem="1FC-vy-4wI" firstAttribute="trailing" secondItem="SRH-FM-Mq3" secondAttribute="trailingMargin" id="tua-9l-2fk"/>
+                            <constraint firstItem="VfC-bO-bgg" firstAttribute="trailing" secondItem="SRH-FM-Mq3" secondAttribute="trailingMargin" id="wQc-Pq-kaa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonOutlet_buttonParticipant" destination="1FC-vy-4wI" id="HnT-f1-w6E"/>
+                        <outlet property="label_currentPlayerTurn" destination="VfC-bO-bgg" id="oMg-D2-yYO"/>
+                        <outlet property="label_participantName" destination="LN7-KE-6ll" id="ZAh-zK-RlQ"/>
+                        <outlet property="label_participantScore" destination="e7L-VB-Y3j" id="FVK-B5-snc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfU-Bb-kY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-13"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9sW-pQ-k6d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FWS-c3-W4s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ikx-Ll-pRj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gtK-cB-nyt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e63-hI-MsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56" y="-372"/>
+        </scene>
+    </scenes>
+</document>
