@@ -1,5 +1,5 @@
 //
-//  QuestionBoardVC.h
+//  SingleQuestionViewController.h
 //  Trivia
 //
 //  Created by Eduardo Flores on 4/13/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionBoardVC : UIViewController
+@interface SingleQuestionViewController : UIViewController
 
 @end

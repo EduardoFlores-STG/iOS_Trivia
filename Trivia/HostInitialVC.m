@@ -83,8 +83,6 @@
 {
     if ([[segue identifier]isEqualToString:@"segueQuestionBoard"])
     {
-        QuestionBoardVC *qbvc = [segue destinationViewController];
-        qbvc.appDelegate = self.appDelegate;
     }
 }
 

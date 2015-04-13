@@ -18,6 +18,8 @@
 		A05B19B91ADC41C3005558E3 /* Participant.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19B81ADC41C3005558E3 /* Participant.m */; };
 		A05B19BD1ADC433C005558E3 /* ParticipantGameActionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */; };
 		A05B19C01ADC4490005558E3 /* QuestionBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */; };
+		A05B19C31ADC56AB005558E3 /* SingleQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19C21ADC56AB005558E3 /* SingleQuestionViewController.m */; };
+		A05B19C61ADC57C8005558E3 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19C51ADC57C8005558E3 /* Question.m */; };
 		A066A64B1ADC1F8400D5150C /* TriviaAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A64A1ADC1F8400D5150C /* TriviaAPI.m */; };
 		A066A64D1ADC235B00D5150C /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A066A64C1ADC235B00D5150C /* MultipeerConnectivity.framework */; };
 		A066A6511ADC250900D5150C /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A6501ADC250900D5150C /* MCManager.m */; };
@@ -59,6 +61,10 @@
 		A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantGameActionsVC.m; sourceTree = "<group>"; };
 		A05B19BE1ADC4490005558E3 /* QuestionBoardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBoardVC.h; sourceTree = "<group>"; };
 		A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBoardVC.m; sourceTree = "<group>"; };
+		A05B19C11ADC56AB005558E3 /* SingleQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleQuestionViewController.h; sourceTree = "<group>"; };
+		A05B19C21ADC56AB005558E3 /* SingleQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleQuestionViewController.m; sourceTree = "<group>"; };
+		A05B19C41ADC57C8005558E3 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		A05B19C51ADC57C8005558E3 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		A066A6491ADC1F8400D5150C /* TriviaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriviaAPI.h; sourceTree = "<group>"; };
 		A066A64A1ADC1F8400D5150C /* TriviaAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriviaAPI.m; sourceTree = "<group>"; };
 		A066A64C1ADC235B00D5150C /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
@@ -193,10 +199,14 @@
 		A066A6521ADC27E000D5150C /* Host */ = {
 			isa = PBXGroup;
 			children = (
+				A05B19C41ADC57C8005558E3 /* Question.h */,
+				A05B19C51ADC57C8005558E3 /* Question.m */,
 				A066A6541ADC281600D5150C /* HostInitialVC.h */,
 				A066A6551ADC281600D5150C /* HostInitialVC.m */,
 				A05B19BE1ADC4490005558E3 /* QuestionBoardVC.h */,
 				A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */,
+				A05B19C11ADC56AB005558E3 /* SingleQuestionViewController.h */,
+				A05B19C21ADC56AB005558E3 /* SingleQuestionViewController.m */,
 			);
 			name = Host;
 			sourceTree = "<group>";
@@ -351,11 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A066A6591ADC282500D5150C /* ParticipantInitialVC.m in Sources */,
+				A05B19C61ADC57C8005558E3 /* Question.m in Sources */,
 				A05B19C01ADC4490005558E3 /* QuestionBoardVC.m in Sources */,
 				A066A6511ADC250900D5150C /* MCManager.m in Sources */,
 				A05A472B1ADA1A7200FB0D8B /* AppDelegate.m in Sources */,
 				A05B19B91ADC41C3005558E3 /* Participant.m in Sources */,
 				A066A64B1ADC1F8400D5150C /* TriviaAPI.m in Sources */,
+				A05B19C31ADC56AB005558E3 /* SingleQuestionViewController.m in Sources */,
 				A066A6561ADC281600D5150C /* HostInitialVC.m in Sources */,
 				A05A47281ADA1A7200FB0D8B /* main.m in Sources */,
 				A05A472E1ADA1A7200FB0D8B /* Trivia.xcdatamodeld in Sources */,
@@ -485,6 +497,13 @@
 			baseConfigurationReference = DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"$(SRCROOT)/**",
+				);
 				INFOPLIST_FILE = Trivia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +515,13 @@
 			baseConfigurationReference = 335D79E908A4C39E003BCA3C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"$(SRCROOT)/**",
+				);
 				INFOPLIST_FILE = Trivia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

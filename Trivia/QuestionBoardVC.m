@@ -7,11 +7,21 @@
 //
 
 #import "QuestionBoardVC.h"
+#import "SingleQuestionViewController.h"
+#import "MBProgressHUD.h"
+#import "TriviaAPI.h"
 #import "Macros.h"
+#import "Question.h"
 
 @interface QuestionBoardVC ()
-
-@property (weak, nonatomic) IBOutlet UILabel *label_test;
+{
+    NSMutableArray *arrayCategory_1;
+    NSMutableArray *arrayCategory_2;
+    NSMutableArray *arrayCategory_3;
+    NSMutableArray *arrayCategory_4;
+    NSMutableArray *arrayCategory_5;
+    NSArray *arrayOfCategories;
+}
 @end
 
 @implementation QuestionBoardVC
@@ -21,63 +31,90 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceiveDataWithNotification:)
-                                                 name:MC_NOTIFICATION_DID_RECEIVE_DATA
-                                               object:nil];
+    arrayCategory_1 = [[NSMutableArray alloc]init];
+    arrayCategory_2 = [[NSMutableArray alloc]init];
+    arrayCategory_3 = [[NSMutableArray alloc]init];
+    arrayCategory_4 = [[NSMutableArray alloc]init];
+    arrayCategory_5 = [[NSMutableArray alloc]init];
+    
+    [self downloadCategories];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) didReceiveDataWithNotification:(NSNotification *)notification
+- (void) downloadCategories
 {
-    MCPeerID *peerID = [[notification userInfo]objectForKey:MC_SESSION_KEY_PEER_ID];
-    NSString *peerDisplayName = peerID.displayName;
-    
-    NSData *receivedData = [[notification userInfo]objectForKey:MC_SESSION_KEY_DATA];
-    NSString *receivedMessage = [[NSString alloc]initWithData:receivedData encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"peerDisplayName = %@", peerDisplayName);
-    NSLog(@"receivedMessage = %@", receivedMessage);
-    
-    [[NSOperationQueue mainQueue]addOperationWithBlock:
-     ^{
-         self.label_test.text = [NSString stringWithFormat:@"From: %@, %@", peerDisplayName, receivedMessage];
-     }];
+    // download 5 categories at random
+    for (int i = 0; i < 5; i++)
+    {
+        int random_category_id = rand() % (TRIVIA_CATEGORY_TOTAL_NUMBER - 1) + 1;
+
+        [TriviaAPI getTriviaCategoryWithCategoryId:random_category_id completionBlock:^(id result, NSError *error)
+         {
+             [self parseCategories:(NSDictionary *)result categoryNumber:i];
+             if (i == 4)
+                 [self showQuestions];
+         }];
+    }
 }
 
-- (IBAction)button_enableParticipantButtons:(id)sender
+- (void) parseCategories:(NSDictionary *)category categoryNumber:(int)categoryNumber
 {
-    NSString *message = MC_KEY_ENABLE_BUTTONS;
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *allPeers = self.appDelegate.mcManager.session.connectedPeers;
-    NSError *error;
+    NSString *category_title = [category objectForKey:@"title"];
+    NSArray *clues = [category objectForKey:@"clues"];
     
-    [self.appDelegate.mcManager.session sendData:data
-                                         toPeers:allPeers
-                                        withMode:MCSessionSendDataUnreliable
-                                           error:&error];
-    
-    if (error)
-        NSLog(@"Error sending data. Error = %@", [error localizedDescription]);
+    for (NSDictionary *clue in clues)
+    {
+        Question *question = [[Question alloc]init];
+        [question setQuestion_answer:[clue objectForKey:@"answer"]];
+        [question setQuestion_category_id:[clue objectForKey:@"category_id"]];
+        [question setQuestion_id:[clue objectForKey:@"id"]];
+        [question setQuestion_question:[clue objectForKey:@"question"]];
+        [question setQuestion_value:[clue objectForKey:@"value"]];
+        [question setQuestion_category_title:category_title];
+        
+        switch (categoryNumber)
+        {
+            case 0:
+                [arrayCategory_1 addObject:question];
+                break;
+            case 1:
+                [arrayCategory_2 addObject:question];
+                break;
+            case 2:
+                [arrayCategory_3 addObject:question];
+                break;
+            case 3:
+                [arrayCategory_4 addObject:question];
+                break;
+            case 4:
+                [arrayCategory_5 addObject:question];
+                break;
+            default:
+                break;
+        }
+    }
 }
-- (IBAction)button_disableAllParticipantsButtons:(id)sender
+
+- (void) showQuestions
 {
-    NSString *message = MC_KEY_DISABLE_BUTTONS;
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *allPeers = self.appDelegate.mcManager.session.connectedPeers;
-    NSError *error;
-    
-    [self.appDelegate.mcManager.session sendData:data
-                                         toPeers:allPeers
-                                        withMode:MCSessionSendDataUnreliable
-                                           error:&error];
-    
-    if (error)
-        NSLog(@"Error sending data. Error = %@", [error localizedDescription]);
+    arrayOfCategories = [[NSArray alloc]initWithObjects:arrayCategory_1,
+                                                        arrayCategory_2,
+                                                        arrayCategory_3,
+                                                        arrayCategory_4,
+                                                        arrayCategory_5, nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier]isEqualToString:@"segueSingleQuestion"])
+    {
+        //SingleQuestionViewController *sqvc = [segue destinationViewController];
+    }
 }
 @end
 

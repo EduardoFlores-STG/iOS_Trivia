@@ -27,6 +27,7 @@
 #define TRIVIA_URL_CATEGORY                     @"http://jservice.io/api/category"
 #define TRIVIA_URL_CLUES                        @"http://jservice.io/api/clues"
 
+#define TRIVIA_CATEGORY_TOTAL_NUMBER            18418
 #define TRIVIA_CATEGORY_POTPOURII               306
 #define TRIVIA_CATEGORY_STUPID_ANSWERS          136
 #define TRIVIA_CATEGORY_SPORTS                  42

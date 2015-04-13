@@ -137,12 +137,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-LA-1ca">
-                                <rect key="frame" x="16" y="72" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VC-6q-YQ8">
                                 <rect key="frame" x="16" y="202" width="181" height="30"/>
                                 <state key="normal" title="Enable participant buttons">
@@ -165,12 +159,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="label_test" destination="fbn-LA-1ca" id="vtH-AO-dbp"/>
+                        <segue destination="aaZ-4b-CmH" kind="show" identifier="segueSingleQuestion" id="xb5-Xs-bdb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKi-Ys-iTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2028" y="-732"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dXC-ag-3la">
+            <objects>
+                <viewController id="aaZ-4b-CmH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z74-Ch-veg"/>
+                        <viewControllerLayoutGuide type="bottom" id="rw5-Ia-znB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zkO-eG-X6N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oxs-UJ-ASI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702" y="-732"/>
         </scene>
         <!--Participant-->
         <scene sceneID="bAZ-j0-gVD">
