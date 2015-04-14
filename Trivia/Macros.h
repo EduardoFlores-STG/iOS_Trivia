@@ -20,7 +20,13 @@
 
 #define MC_KEY_ENABLE_BUTTONS                   @"MC_EnableButtons"
 #define MC_KEY_DISABLE_BUTTONS                  @"MC_DisableButtons"
+#define MC_KEY_ASKING_QUESTION                  @"MC_AskingQuestion"
+#define MC_KEY_ANSWERING_QUESTION               @"MC_AnsweringQuestion"
 #define MC_KEY_CURRENT_QUESTION                 @"MC_CurrentQuestion"
+#define MC_KEY_ANSWER_CORRECT                   @"MC_AnswerCorrect"
+#define MC_KEY_ANSWER_INCORRECT                 @"MC_AnswerIncorrect"
+#define MC_KEY_SCORE                            @"MC_CurrentScore"
+
 
 // Trivia API related
 #define TRIVIA_URL_BASE                         @"http://jservice.io"

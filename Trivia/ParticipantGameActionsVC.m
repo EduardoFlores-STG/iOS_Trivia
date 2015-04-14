@@ -83,6 +83,25 @@
              [self disableButton];
         }];
     }
+    else if ([receivedMessage isEqualToString:MC_KEY_ASKING_QUESTION])
+    {
+        [[NSOperationQueue mainQueue]addOperationWithBlock:
+         ^{
+             [self displayNameOfActivePlayer:@""];
+             [self disableButton];
+             self.label_currentQuestion.text = @"";
+         }];
+    }
+    else if ([receivedMessage isEqualToString:MC_KEY_ANSWER_CORRECT])
+    {
+        [[NSOperationQueue mainQueue]addOperationWithBlock:
+         ^{
+             self.label_participantScore.text = @"$200";
+             [self displayNameOfActivePlayer:@""];
+             [self disableButton];
+             self.label_currentQuestion.text = @"";
+         }];
+    }
     else    // assuming the only thing that won't have a specific key is the question itself
     {
         [[NSOperationQueue mainQueue]addOperationWithBlock:

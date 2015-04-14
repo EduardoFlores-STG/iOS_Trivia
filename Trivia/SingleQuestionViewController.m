@@ -11,6 +11,9 @@
 #import "Macros.h"
 
 @interface SingleQuestionViewController ()
+{
+    MCPeerID *currentAnsweringPeerID;
+}
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (weak, nonatomic) IBOutlet UILabel *label_question;
@@ -49,8 +52,8 @@
 
 - (void) didReceiveDataWithNotification:(NSNotification *)notification
 {
-    MCPeerID *peerID = [[notification userInfo]objectForKey:MC_SESSION_KEY_PEER_ID];
-    NSString *peerDisplayName = peerID.displayName;
+    currentAnsweringPeerID = [[notification userInfo]objectForKey:MC_SESSION_KEY_PEER_ID];
+    NSString *peerDisplayName = currentAnsweringPeerID.displayName;
     
     NSData *receivedData = [[notification userInfo]objectForKey:MC_SESSION_KEY_DATA];
     NSString *receivedMessage = [[NSString alloc]initWithData:receivedData encoding:NSUTF8StringEncoding];
@@ -60,7 +63,7 @@
     
     [[NSOperationQueue mainQueue]addOperationWithBlock:
      ^{
-         //self.label_test.text = [NSString stringWithFormat:@"From: %@, %@", peerDisplayName, receivedMessage];
+         self.label_currentPlayer.text = peerDisplayName;
      }];
 }
 
@@ -98,6 +101,22 @@
 
 - (IBAction)button_correctAnswer:(id)sender
 {
+    NSString *message = MC_KEY_ANSWER_CORRECT;
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *currentPeer = @[currentAnsweringPeerID];
+    NSLog(@"currentPeer = %@", currentPeer);
+    
+    NSError *error;
+    
+    [self.appDelegate.mcManager.session sendData:data
+                                         toPeers:currentPeer
+                                        withMode:MCSessionSendDataUnreliable
+                                           error:&error];
+    
+    if (error)
+        NSLog(@"Error sending data. Error = %@", [error localizedDescription]);
+    
+    [self button_enableParticipantButtons:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
