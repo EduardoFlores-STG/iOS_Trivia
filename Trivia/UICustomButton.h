@@ -1,5 +1,5 @@
 //
-//  SingleQuestionViewController.h
+//  UICustomButton.h
 //  Trivia
 //
 //  Created by Eduardo Flores on 4/13/15.
@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Question.h"
 
-@interface SingleQuestionViewController : UIViewController
+@interface UICustomButton : UIButton
 
 @property (nonatomic, retain) Question *question;
+
 @end

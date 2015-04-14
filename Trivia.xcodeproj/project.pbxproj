@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47ABA9E814B070F51F0313F6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D48E2D80A6599C3A66CEA7C /* libPods.a */; };
+		A055FEE91ADCA05F00C06D2E /* UICustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A055FEE81ADCA05F00C06D2E /* UICustomButton.m */; };
 		A05A47281ADA1A7200FB0D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A47271ADA1A7200FB0D8B /* main.m */; };
 		A05A472B1ADA1A7200FB0D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A472A1ADA1A7200FB0D8B /* AppDelegate.m */; };
 		A05A472E1ADA1A7200FB0D8B /* Trivia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A05A472C1ADA1A7200FB0D8B /* Trivia.xcdatamodeld */; };
@@ -44,6 +45,8 @@
 		335D79E908A4C39E003BCA3C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8D48E2D80A6599C3A66CEA7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01EAF151ADA235C00FCEFB3 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		A055FEE71ADCA05F00C06D2E /* UICustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICustomButton.h; sourceTree = "<group>"; };
+		A055FEE81ADCA05F00C06D2E /* UICustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICustomButton.m; sourceTree = "<group>"; };
 		A05A47221ADA1A7200FB0D8B /* Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05A47261ADA1A7200FB0D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05A47271ADA1A7200FB0D8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				A066A64A1ADC1F8400D5150C /* TriviaAPI.m */,
 				A066A64F1ADC250900D5150C /* MCManager.h */,
 				A066A6501ADC250900D5150C /* MCManager.m */,
+				A055FEE71ADCA05F00C06D2E /* UICustomButton.h */,
+				A055FEE81ADCA05F00C06D2E /* UICustomButton.m */,
 			);
 			name = "Helpers and Macros";
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 			files = (
 				A066A6591ADC282500D5150C /* ParticipantInitialVC.m in Sources */,
 				A05B19C61ADC57C8005558E3 /* Question.m in Sources */,
+				A055FEE91ADCA05F00C06D2E /* UICustomButton.m in Sources */,
 				A05B19C01ADC4490005558E3 /* QuestionBoardVC.m in Sources */,
 				A066A6511ADC250900D5150C /* MCManager.m in Sources */,
 				A05A472B1ADA1A7200FB0D8B /* AppDelegate.m in Sources */,
