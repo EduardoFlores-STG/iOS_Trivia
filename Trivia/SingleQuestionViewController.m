@@ -33,11 +33,12 @@
                                                  name:MC_NOTIFICATION_DID_RECEIVE_DATA
                                                object:nil];
 
-    self.navigationController.navigationBarHidden = NO;
     self.label_question.text = self.question.question_question;
     self.label_answer.text = self.question.question_answer;
     self.label_questionCategory.text = self.question.question_category_title;
     self.label_questionValue.text = [NSString stringWithFormat:@"$%@", self.question.question_value];
+    [self sendQuestionToParticipants];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +64,22 @@
      }];
 }
 
+- (void) sendQuestionToParticipants
+{
+    NSString *message = self.question.question_question;
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *allPeers = self.appDelegate.mcManager.session.connectedPeers;
+    NSError *error;
+    
+    [self.appDelegate.mcManager.session sendData:data
+                                         toPeers:allPeers
+                                        withMode:MCSessionSendDataUnreliable
+                                           error:&error];
+    
+    if (error)
+        NSLog(@"Error sending data. Error = %@", [error localizedDescription]);
+}
+
 - (IBAction)button_enableParticipantButtons:(id)sender
 {
     NSString *message = MC_KEY_ENABLE_BUTTONS;
@@ -78,5 +95,16 @@
     if (error)
         NSLog(@"Error sending data. Error = %@", [error localizedDescription]);
 }
+
+- (IBAction)button_correctAnswer:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)button_incorrectAnswer:(id)sender
+{
+}
+
+
 
 @end

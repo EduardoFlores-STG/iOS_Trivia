@@ -18,8 +18,9 @@
 #define MC_SESSION_KEY_STATE                    @"MC_State"
 #define MC_SESSION_KEY_DATA                     @"MC_Data"
 
-#define MC_KEY_ENABLE_BUTTONS                   @"EnableButtons"
-#define MC_KEY_DISABLE_BUTTONS                  @"DisableButtons"
+#define MC_KEY_ENABLE_BUTTONS                   @"MC_EnableButtons"
+#define MC_KEY_DISABLE_BUTTONS                  @"MC_DisableButtons"
+#define MC_KEY_CURRENT_QUESTION                 @"MC_CurrentQuestion"
 
 // Trivia API related
 #define TRIVIA_URL_BASE                         @"http://jservice.io"

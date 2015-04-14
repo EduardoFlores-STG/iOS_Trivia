@@ -15,8 +15,9 @@
 #import "Question.h"
 #import "UICustomButton.h"
 
-#define BOARD_NUMBER_OF_ROWS        6
-#define BOARD_NUMBER_OF_COLUMNS     6
+#define BOARD_NUMBER_OF_ROWS            6
+#define BOARD_NUMBER_OF_COLUMNS         6
+#define BOARD_NUMBER_OF_CATEGORIES      6
 
 @interface QuestionBoardVC ()
 {
@@ -37,6 +38,12 @@
 @end
 
 @implementation QuestionBoardVC
+
+- (void)loadView
+{
+    [super loadView];
+    self.navigationController.navigationBarHidden = YES;
+}
 
 - (void)viewDidLoad
 {
@@ -62,8 +69,6 @@
 {
     [super viewDidAppear:animated];
     
-    self.navigationController.navigationBarHidden = YES;
-
     NSString *message = MC_KEY_DISABLE_BUTTONS;
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *allPeers = self.appDelegate.mcManager.session.connectedPeers;
@@ -191,12 +196,11 @@
                 Question *question_category = [[arrayOfCategories objectAtIndex:x]objectAtIndex:0];
                 [buttons[x][y] setTitle:[question_category question_category_title] forState:UIControlStateNormal];
             }
-            else if (y < 5)
+            else if (y > 0 && y < 6)
             {
-                NSLog(@"x = %d, y = %d", x, y);
-                Question *question = [[arrayOfCategories objectAtIndex:x]objectAtIndex:y];
-                NSLog(@"question = %@", question.question_question);
+                Question *question = [[arrayOfCategories objectAtIndex:x]objectAtIndex:(y-1)];
                 [buttons[x][y]setQuestion:question];
+                [buttons[x][y] setTitle:[NSString stringWithFormat:@"$%@", question.question_value] forState:UIControlStateNormal];
             }
             
             [self.view addSubview:buttons[x][y]];
@@ -205,24 +209,21 @@
 }
 
 - (IBAction)askQuestion:(id)sender
-{
-    NSLog(@"askQuestion sender = %@", [sender class]);
-    
+{    
     UICustomButton *button = (UICustomButton *)sender;
-    NSLog(@"question category = %@", button.question.question_category_title);
-    NSLog(@"question = %@", button.question.question_question);
-    NSLog(@"question answer = %@", button.question.question_answer);
-    NSLog(@"question value = %@", button.question.question_value);
     
-    [self performSegueWithIdentifier:@"segueSingleQuestion" sender:nil];
+    [self performSegueWithIdentifier:@"segueSingleQuestion" sender:button];
 
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    UICustomButton *button = (UICustomButton *)sender;
+
     if ([[segue identifier]isEqualToString:@"segueSingleQuestion"])
     {
         SingleQuestionViewController *sqvc = [segue destinationViewController];
+        sqvc.question = button.question;
     }
 }
 @end

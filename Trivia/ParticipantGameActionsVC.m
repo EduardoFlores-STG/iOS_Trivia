@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label_participantName;
 @property (weak, nonatomic) IBOutlet UILabel *label_participantScore;
 @property (weak, nonatomic) IBOutlet UILabel *label_currentPlayerTurn;
+@property (weak, nonatomic) IBOutlet UILabel *label_currentQuestion;
 @end
 
 @implementation ParticipantGameActionsVC
@@ -42,6 +43,7 @@
 
 - (IBAction)button_participant:(id)sender
 {
+    [self displayButtonIsInUse];
     NSString *message = self.participant.participant_name;
     
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
@@ -81,6 +83,13 @@
              [self disableButton];
         }];
     }
+    else    // assuming the only thing that won't have a specific key is the question itself
+    {
+        [[NSOperationQueue mainQueue]addOperationWithBlock:
+         ^{
+             self.label_currentQuestion.text = receivedMessage;
+         }];
+    }
 }
 
 - (void) displayNameOfActivePlayer:(NSString*)peerDisplayName
@@ -95,6 +104,12 @@
 {
     self.buttonOutlet_buttonParticipant.enabled = YES;
     self.buttonOutlet_buttonParticipant.backgroundColor = [UIColor greenColor];
+}
+
+- (void) displayButtonIsInUse
+{
+    self.buttonOutlet_buttonParticipant.enabled = NO;
+    self.buttonOutlet_buttonParticipant.backgroundColor = [UIColor redColor];
 }
 
 - (void) disableButton
