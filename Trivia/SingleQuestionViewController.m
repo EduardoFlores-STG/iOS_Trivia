@@ -102,6 +102,8 @@
 - (IBAction)button_correctAnswer:(id)sender
 {
     NSString *message = MC_KEY_ANSWER_CORRECT;
+    message = [message stringByAppendingString:TRIVIA_GENERIC_SEPARATOR];
+    message = [message stringByAppendingString:[self.question.question_value stringValue]];
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *currentPeer = @[currentAnsweringPeerID];
     NSLog(@"currentPeer = %@", currentPeer);

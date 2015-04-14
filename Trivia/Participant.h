@@ -11,6 +11,8 @@
 @interface Participant : NSObject
 
 @property (nonatomic, copy) NSString *participant_name;
-@property (nonatomic, assign) int participant_score;
+@property (nonatomic, retain) NSNumber *participant_score;
+
++(Participant *)sharedInstance;
 
 @end

@@ -10,4 +10,20 @@
 
 @implementation Participant
 
++(Participant *)sharedInstance
+{
+    // the instance of this class is stored here
+    static Participant *myInstance = nil;
+    
+    // check to see if an instance already exists
+    if (myInstance == nil)
+    {
+        myInstance = [[[self class]alloc]init];
+        
+        // initialize variables here, if needed
+    }
+    
+    // return instance of this class
+    return myInstance;
+}
 @end

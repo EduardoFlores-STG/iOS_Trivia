@@ -8,6 +8,7 @@
 
 #import "ParticipantGameActionsVC.h"
 #import "Macros.h"
+#import "Participant.h"
 
 @interface ParticipantGameActionsVC ()
 
@@ -30,7 +31,7 @@
                                                object:nil];
     self.label_currentPlayerTurn.text = @"";
     self.label_participantName.text = self.participant.participant_name;
-    self.label_participantScore.text = [NSString stringWithFormat:@"$%d", self.participant.participant_score];
+    self.label_participantScore.text = [NSString stringWithFormat:@"$%@", self.participant.participant_score];
     
     [self disableButton];
 }
@@ -92,11 +93,15 @@
              self.label_currentQuestion.text = @"";
          }];
     }
-    else if ([receivedMessage isEqualToString:MC_KEY_ANSWER_CORRECT])
+    else if ([receivedMessage containsString:MC_KEY_ANSWER_CORRECT])
     {
         [[NSOperationQueue mainQueue]addOperationWithBlock:
          ^{
-             self.label_participantScore.text = @"$200";
+             NSNumber *questionValue = [[receivedMessage componentsSeparatedByString:TRIVIA_GENERIC_SEPARATOR]objectAtIndex:1];
+             NSNumber *playerScore = [[Participant sharedInstance]participant_score];
+             int currentScore = [questionValue intValue] + [playerScore intValue];
+             [[Participant sharedInstance]setParticipant_score:[NSNumber numberWithInt:currentScore]];
+             self.label_participantScore.text = [NSString stringWithFormat:@"$%@", [[Participant sharedInstance]participant_score]];
              [self displayNameOfActivePlayer:@""];
              [self disableButton];
              self.label_currentQuestion.text = @"";

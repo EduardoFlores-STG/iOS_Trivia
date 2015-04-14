@@ -9,6 +9,9 @@
 #ifndef Trivia_Macros_h
 #define Trivia_Macros_h
 
+// Generic
+#define TRIVIA_GENERIC_SEPARATOR                @";;;"
+
 // Multipeer connectivity related
 #define MC_SERVICE_ID                           @"eduardo-trivia"
 
