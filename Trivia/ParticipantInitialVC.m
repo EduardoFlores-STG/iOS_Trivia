@@ -11,7 +11,10 @@
 #import "Macros.h"
 #import "MBProgressHUD.h"
 #import "Participant.h"
-#import "ParticipantGameActionsVC.h"
+#import "QuestionBoardVC.h"
+#import "Question.h"
+
+#define SEGUE_PLAYER_BOARD  @"seguePlayerQuestionBoard"
 
 @interface ParticipantInitialVC ()
 
@@ -50,17 +53,11 @@
     
     // broadcast your device so it can be found by MC browser
     [[self.appDelegate mcManager]advertiseItself:YES];
-
-    // remove "wait..." dialog when user gets invited
-    // Move to next view once invited and connected
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(peerDidChangeStateWithNotification:)
-                                                 name:MC_NOTIFICATION_DID_CHANGE_STATE
-                                               object:nil];
     
-    // for UI design
-    //[self performSegueWithIdentifier:@"segueParticipantGameAction" sender:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:MC_NOTIFICATION_DID_RECEIVE_DATA
+                                               object:nil];
 }
 
 - (void)peerDidChangeStateWithNotification:(NSNotification *)notification
@@ -72,19 +69,39 @@
     
     if (state == MCSessionStateConnected)
     {
-        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-            [self performSegueWithIdentifier:@"segueParticipantGameAction" sender:nil];
-        }];
+        NSLog(@"connection acquired");
     }
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier]isEqualToString:@"segueParticipantGameAction"])
+    if ([[segue identifier]isEqualToString:SEGUE_PLAYER_BOARD])
     {
-        ParticipantGameActionsVC *pgavc = [segue destinationViewController];
-        pgavc.participant = self.participant;
-        pgavc.appDelegate = self.appDelegate;
+        QuestionBoardVC *qbvc = [segue destinationViewController];
+        NSArray *arrayOfBoardData = (NSArray *)sender;
+        qbvc.arrayOfBoardDataForPlayer = arrayOfBoardData;
+        qbvc.participant = self.participant;
+    }
+}
+
+- (void) didReceiveDataWithNotification:(NSNotification *)notification
+{
+    // this should come from QuestionBoardVC sendBoardDataFromHostToPlayer
+    NSData *receivedData = [[notification userInfo]objectForKey:MC_SESSION_KEY_DATA];
+    
+    NSArray *arrayOfBoardData = [[NSArray alloc]init];
+    arrayOfBoardData = (NSArray *) [NSKeyedUnarchiver unarchiveObjectWithData:receivedData];
+    if (arrayOfBoardData)
+    {
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:MC_NOTIFICATION_DID_RECEIVE_DATA
+                                                      object:nil];
+        
+        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+            // GETTING CALLED FROM QUESTIONBOARDVC!!!
+            [self performSegueWithIdentifier:SEGUE_PLAYER_BOARD sender:arrayOfBoardData];
+        }];
     }
 }
 

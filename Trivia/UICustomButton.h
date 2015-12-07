@@ -12,5 +12,7 @@
 @interface UICustomButton : UIButton
 
 @property (nonatomic, retain) Question *question;
+@property (nonatomic, assign) int coordinate_x;
+@property (nonatomic, assign) int coordinate_y;
 
 @end

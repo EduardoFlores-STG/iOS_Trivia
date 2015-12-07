@@ -17,7 +17,6 @@
 		A05A47391ADA1A7200FB0D8B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05A47371ADA1A7200FB0D8B /* LaunchScreen.xib */; };
 		A05A47451ADA1A7200FB0D8B /* TriviaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A05A47441ADA1A7200FB0D8B /* TriviaTests.m */; };
 		A05B19B91ADC41C3005558E3 /* Participant.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19B81ADC41C3005558E3 /* Participant.m */; };
-		A05B19BD1ADC433C005558E3 /* ParticipantGameActionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */; };
 		A05B19C01ADC4490005558E3 /* QuestionBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */; };
 		A05B19C31ADC56AB005558E3 /* SingleQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19C21ADC56AB005558E3 /* SingleQuestionViewController.m */; };
 		A05B19C61ADC57C8005558E3 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B19C51ADC57C8005558E3 /* Question.m */; };
@@ -29,6 +28,7 @@
 		A066A65C1ADC28B300D5150C /* HostOrParticipantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */; };
 		A066A65E1ADC2D4300D5150C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A066A65D1ADC2D4300D5150C /* Podfile */; };
 		A0EC76D91ADC72D800EDF70A /* cell.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EC76D81ADC72D800EDF70A /* cell.png */; };
+		A0F33AE21C11ECFD00501319 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F33AE11C11ECFD00501319 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,6 @@
 		A05A47441ADA1A7200FB0D8B /* TriviaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TriviaTests.m; sourceTree = "<group>"; };
 		A05B19B71ADC41C3005558E3 /* Participant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Participant.h; sourceTree = "<group>"; };
 		A05B19B81ADC41C3005558E3 /* Participant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Participant.m; sourceTree = "<group>"; };
-		A05B19BB1ADC433C005558E3 /* ParticipantGameActionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantGameActionsVC.h; sourceTree = "<group>"; };
-		A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantGameActionsVC.m; sourceTree = "<group>"; };
 		A05B19BE1ADC4490005558E3 /* QuestionBoardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBoardVC.h; sourceTree = "<group>"; };
 		A05B19BF1ADC4490005558E3 /* QuestionBoardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBoardVC.m; sourceTree = "<group>"; };
 		A05B19C11ADC56AB005558E3 /* SingleQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleQuestionViewController.h; sourceTree = "<group>"; };
@@ -82,6 +80,7 @@
 		A066A65B1ADC28B300D5150C /* HostOrParticipantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostOrParticipantVC.m; sourceTree = "<group>"; };
 		A066A65D1ADC2D4300D5150C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0EC76D81ADC72D800EDF70A /* cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell.png; sourceTree = "<group>"; };
+		A0F33AE11C11ECFD00501319 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F33AE21C11ECFD00501319 /* AudioToolbox.framework in Frameworks */,
 				A066A64D1ADC235B00D5150C /* MultipeerConnectivity.framework in Frameworks */,
 				47ABA9E814B070F51F0313F6 /* libPods.a in Frameworks */,
 			);
@@ -108,6 +108,7 @@
 		4B38D87907E49F708C8EA981 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0F33AE11C11ECFD00501319 /* AudioToolbox.framework */,
 				A066A64C1ADC235B00D5150C /* MultipeerConnectivity.framework */,
 				8D48E2D80A6599C3A66CEA7C /* libPods.a */,
 			);
@@ -226,8 +227,6 @@
 				A05B19B81ADC41C3005558E3 /* Participant.m */,
 				A066A6571ADC282500D5150C /* ParticipantInitialVC.h */,
 				A066A6581ADC282500D5150C /* ParticipantInitialVC.m */,
-				A05B19BB1ADC433C005558E3 /* ParticipantGameActionsVC.h */,
-				A05B19BC1ADC433C005558E3 /* ParticipantGameActionsVC.m */,
 			);
 			name = Participant;
 			sourceTree = "<group>";
@@ -244,6 +243,7 @@
 				A05A471F1ADA1A7200FB0D8B /* Frameworks */,
 				A05A47201ADA1A7200FB0D8B /* Resources */,
 				7F79F22010FD8CB2E90D8110 /* Copy Pods Resources */,
+				CCF0221330CECFCE123CDC2D /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,11 +278,12 @@
 		A05A471A1ADA1A7200FB0D8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Eduardo Flores";
 				TargetAttributes = {
 					A05A47211ADA1A7200FB0D8B = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = NHJ9WCNN2Z;
 					};
 					A05A473D1ADA1A7200FB0D8B = {
 						CreatedOnToolsVersion = 6.2;
@@ -362,6 +363,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CCF0221330CECFCE123CDC2D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -381,7 +397,6 @@
 				A066A6561ADC281600D5150C /* HostInitialVC.m in Sources */,
 				A05A47281ADA1A7200FB0D8B /* main.m in Sources */,
 				A05A472E1ADA1A7200FB0D8B /* Trivia.xcdatamodeld in Sources */,
-				A05B19BD1ADC433C005558E3 /* ParticipantGameActionsVC.m in Sources */,
 				A066A65C1ADC28B300D5150C /* HostOrParticipantVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +459,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -507,6 +523,8 @@
 			baseConfigurationReference = DBF42F29F767DF132D1AD184 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -515,8 +533,11 @@
 					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = Trivia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardoflores.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -525,6 +546,8 @@
 			baseConfigurationReference = 335D79E908A4C39E003BCA3C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -533,8 +556,11 @@
 					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = Trivia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardoflores.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -552,6 +578,7 @@
 				);
 				INFOPLIST_FILE = TriviaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardoflores.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivia.app/Trivia";
 			};
@@ -567,6 +594,7 @@
 				);
 				INFOPLIST_FILE = TriviaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eduardoflores.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trivia.app/Trivia";
 			};

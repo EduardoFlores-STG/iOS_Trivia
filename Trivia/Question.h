@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Question : NSObject
+@interface Question : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *question_category_title;
 @property (nonatomic, retain) NSNumber *question_category_id;

@@ -29,6 +29,9 @@
 #define MC_KEY_ANSWER_CORRECT                   @"MC_AnswerCorrect"
 #define MC_KEY_ANSWER_INCORRECT                 @"MC_AnswerIncorrect"
 #define MC_KEY_SCORE                            @"MC_CurrentScore"
+#define MC_KEY_REQUEST_ALL_PARTICIPANTS_SCORE   @"MC_RequestAllPlayerScore"
+#define MC_KEY_SEND_ALL_PARTICIPANTS_SCORE      @"MC_SendAllPlayerScore"
+#define MC_KEY_CATEGORIES                       @"MC_Categories"
 
 
 // Trivia API related

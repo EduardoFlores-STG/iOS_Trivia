@@ -19,6 +19,8 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    NSLog(@"getAllTriviaCategories url = %@", url);
+    
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
@@ -39,6 +41,8 @@
     NSString *urlString = [NSString stringWithFormat:@"%@?id=%d", TRIVIA_URL_CATEGORY, categoryId];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSLog(@"getTriviaCategoryWithCategoryId url = %@", url);
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];

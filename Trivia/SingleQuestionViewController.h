@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Question.h"
+#import "Participant.h"
 
 @interface SingleQuestionViewController : UIViewController
 
 @property (nonatomic, retain) Question *question;
+@property (nonatomic, assign) BOOL isHost;
+@property (nonatomic, retain) Participant *participant;
+
 @end

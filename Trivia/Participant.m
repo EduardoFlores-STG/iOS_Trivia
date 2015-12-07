@@ -8,6 +8,9 @@
 
 #import "Participant.h"
 
+#define PARTICIPANT_NAME        @"participant_name"
+#define PARTICIPANT_SCORE       @"participant_score"
+
 @implementation Participant
 
 +(Participant *)sharedInstance
@@ -26,4 +29,25 @@
     // return instance of this class
     return myInstance;
 }
+
+- (void) encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:_participant_name forKey:PARTICIPANT_NAME];
+    [encoder encodeObject:_participant_score forKey:PARTICIPANT_SCORE];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    if (!self) {
+        NSLog(@"initWithCoder in UICustomButton object is nil!");
+        return nil;
+    }
+    
+    self.participant_name = [decoder decodeObjectForKey:PARTICIPANT_NAME];
+    self.participant_score = [decoder decodeObjectForKey:PARTICIPANT_SCORE];
+    
+    return self;
+}
+
+
+
 @end

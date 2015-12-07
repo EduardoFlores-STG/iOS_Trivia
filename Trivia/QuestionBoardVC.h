@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Participant.h"
 
 @interface QuestionBoardVC : UIViewController
+{
+    NSMutableArray *categoryTitles;
+}
+
+@property (nonatomic, retain) NSArray *arrayOfBoardDataForPlayer;
+@property (nonatomic, retain) Participant *participant;
 
 @end

@@ -58,7 +58,7 @@
     MCPeerID *peerID = [[notification userInfo]objectForKey:MC_SESSION_KEY_PEER_ID];
     MCSessionState state = [[[notification userInfo]objectForKey:MC_SESSION_KEY_STATE]intValue];
     NSLog(@"peer name = %@", peerID.displayName);
-    NSLog(@"peer state = %ld", state);
+    NSLog(@"peer state = %ld", (long)state);
 }
 
 - (void) dismissBrowserView
